@@ -72,7 +72,15 @@ public class LogIn {
             {
                 if(u.getPassword()==password)  // Hay que añadir
                 {
+                    for(Profesional p:profesional)
+                    {
+                        if(id_usuario.equals(p.get(id_profesional)))
+                        {
+                            //mostrar profesional
+                        }
+                    }
                     //autenticar (con controlador)
+                    
                 }
                 else
                 {
