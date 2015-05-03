@@ -70,7 +70,7 @@ public class LogIn {
         {
             if(usuario.getNif().equals(usuario))
             {
-                if(u.getPassword()==password)  // Hay que añadir
+                if(u.getPassword().equals(password))  // Hay que añadir
                 {
                     for(Profesional p:profesional)
                     {
