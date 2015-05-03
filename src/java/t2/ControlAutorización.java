@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.BackingBeans;
+package t2;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

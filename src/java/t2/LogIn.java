@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.BackingBeans;
+package t2;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import t1.Profesional;
+import t1.Usuario;
 
 /**
  *
@@ -27,9 +29,9 @@ public class LogIn {
 
 
     public LogIn() {
-        usuarios=new ArrayList<Usuario>;
-        profesionales=new ArrayList<Profesional>;
-        for(Usuarios u:usuarios)
+        usuarios=new ArrayList<Usuario>();
+        profesionales=new ArrayList<Profesional>();
+        for(Usuario u:usuarios)
         {
             usuarios.add(u);
         }
@@ -68,13 +70,13 @@ public class LogIn {
     {
         for(Usuario u:usuarios)
         {
-            if(usuario.getNif().equals(usuario))
+            if(u.getNIF().equals(usuario))
             {
-                if(u.getPassword().equals(password))  // Hay que añadir
+                if(u.getClave().equals(password))  // Hay que añadir
                 {
-                    for(Profesional p:profesional)
+                    for(Profesional p:profesionales)
                     {
-                        if(id_usuario.equals(p.get(id_profesional)))
+                        if(u.getId().equals(p.getUsuario()))
                         {
                             //mostrar profesional
                         }
