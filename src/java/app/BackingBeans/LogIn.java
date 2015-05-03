@@ -5,6 +5,8 @@
  */
 package app.BackingBeans;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -21,7 +23,7 @@ public class LogIn {
    private String estado;
    private List<Usuario> usuarios;
    private List<Profesional> profesionales;  
-   @inject //
+  //  @inject //
 
 
     public LogIn() {
