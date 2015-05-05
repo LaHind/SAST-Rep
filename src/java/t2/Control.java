@@ -66,7 +66,7 @@ public class Control {
                         }
                         else
                         {
-                            control.setUser(u);
+                            setUser(u);
                             return control.PaginaPrincipal();
                         }
                     })  
