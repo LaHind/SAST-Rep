@@ -36,17 +36,18 @@ public class DarAltaUsuario implements Serializable {
     
     public void darDeAlta(Usuario user)
     {
-        usuarios.stream().forEach((u) -> {
+          for(Usuario u: usuarios)
+        {
             if (u.getNIF().equals(user.getNIF()))
             {
                 FacesContext ctx = FacesContext.getCurrentInstance();
-                ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario existente", "Usuario existente"));
+                    ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario existente", "Usuario existente"));
             }
             else 
             {
                 usuarios.add(user);
             }
-        });
+        }
     }
     
 }
