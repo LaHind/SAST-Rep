@@ -23,6 +23,7 @@ public class Control {
     private Usuario user;
     private Profesional pro;
    private List<Profesional> profesionales; 
+   private List<Usuario> usuarios;
     
     public Control() {
     }
@@ -49,30 +50,37 @@ public class Control {
          
     public String PaginaPrincipal()
     {
+        String page=null;
         if (user == null) 
         {
-            return "index.xhtml";
+            page= "index.xhtml";
         } 
         else 
         { 
           for(Profesional p:profesionales)
                     {
-                        if(u.getId().equals(p.getUsuario()))
+                        if(user.getId().equals(p.getUsuario()))
                         {
                             
-                          setPro((Profesional)u);
-                            return "profesional.xhtml";
+                          setPro((Profesional)user);
+                            page= "expedienteprof.xhtml";
                             
                         }
                         else
                         {
-                            setUser(u);
-                            return control.PaginaPrincipal();
+                            setUser(user);
+                            page= "expedienteusuario.xhtml";
+                            
                         }
-                    })  
+                    }  
             
         }
-/////// PIENSO QUITAR EL CONTROL DE SI ES PROFESIONAL O USUARIO DEL OTRO BACKING BEAN Y PONERLO AQUI
+        return page;
+    }
+    
+    public void CrearUsuario(Usuario user)
+    {
+        usuarios.add(user);
     }
     
 }

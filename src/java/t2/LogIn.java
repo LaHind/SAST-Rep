@@ -73,7 +73,7 @@ public class LogIn {
     
     public String Autenticar()
     {
-        
+        String aux=null;
         for(Usuario u:usuarios)
         {
             if(u.getNIF().equals(usuario))
@@ -82,14 +82,14 @@ public class LogIn {
                 {
                     
                     control.setUser(u);
-                    return control.PaginaPrincipal();
+                    aux=control.PaginaPrincipal();
                 }
                 else
                 {
                     //contraseña errónea 
                    FacesContext ctx = FacesContext.getCurrentInstance();
                     ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Contraseña no válida", "Contraseña no válida"));
-                    return null;
+                    
                 }
                 
             }
@@ -97,11 +97,11 @@ public class LogIn {
             {
                 FacesContext ctx = FacesContext.getCurrentInstance();
                     ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "El usuario no existe", "El usuario no existe"));
-                    return null;
+                    
                 //Usuario no encontrado
             }
         }
-         //AUNQUE HAY UN RETURN EN CADA CCASO DA ERROR PORQUE DICE QUE FALTA EL RETURN Uff
+        return aux;
     }
     
 }

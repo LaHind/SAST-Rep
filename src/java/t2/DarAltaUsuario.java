@@ -22,6 +22,8 @@ import t1.Usuario;
 @RequestScoped
 public class DarAltaUsuario implements Serializable {
     
+    @Inject 
+    private Control ctrl;
     
     private List<Usuario> usuarios;
 
@@ -45,7 +47,7 @@ public class DarAltaUsuario implements Serializable {
             }
             else 
             {
-                usuarios.add(user);
+              ctrl.CrearUsuario(user);
             }
         }
     }
