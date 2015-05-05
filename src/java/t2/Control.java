@@ -78,9 +78,10 @@ public class Control {
         return page;
     }
     
-    public void CrearUsuario(Usuario user)
+    public String CrearUsuario(Usuario user)
     {
         usuarios.add(user);
+        return "expedienteusuario.xhtml";
     }
     
 }
