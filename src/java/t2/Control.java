@@ -14,11 +14,12 @@ import javax.faces.bean.RequestScoped;
  */
 @ManagedBean
 @RequestScoped
-public class ControlAutorización {
+public class Control {
 
     private Usuario user;
+   
     
-    public ControlAutorización() {
+    public Control() {
     }
 
     public Usuario getUser() {
@@ -28,7 +29,13 @@ public class ControlAutorización {
     public void setUser(Usuario user) {
         this.user = user;
     }
+
+    public void setPro(Profesional pro) {
+        (Profesional) ;
+    }
     
+    
+         
     public String PáginaPrincipal()
     {
         if (user == null) 
@@ -36,7 +43,11 @@ public class ControlAutorización {
             return "index.xhtml";
         } 
         else 
-        { /////// PIENSO QUITAR EL CONTROL DE SI ES PROFESIONAL O USUARIO DEL OTRO BACKING BEAN Y PONERLO AQUI
+        { 
+          if()  
+            
+        }
+/////// PIENSO QUITAR EL CONTROL DE SI ES PROFESIONAL O USUARIO DEL OTRO BACKING BEAN Y PONERLO AQUI
     }
     
 }

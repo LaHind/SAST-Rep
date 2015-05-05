@@ -25,7 +25,9 @@ public class LogIn {
    private String estado;
    private List<Usuario> usuarios;
    private List<Profesional> profesionales;  
-  //  @inject //
+   
+   @inject
+   private Control control;
 
 
     public LogIn() {
@@ -78,11 +80,12 @@ public class LogIn {
                     {
                         if(u.getId().equals(p.getUsuario()))
                         {
-                            //mostrar profesional
+                           control.setPro(p);
+                            return "profesional.xhtml";
+                            
                         }
                     }
                     //autenticar (con controlador)
-                    
                 }
                 else
                 {
