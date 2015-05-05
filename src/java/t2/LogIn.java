@@ -7,8 +7,11 @@ package t2;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import t1.Profesional;
 import t1.Usuario;
 
@@ -26,7 +29,7 @@ public class LogIn {
    private List<Usuario> usuarios;
    private List<Profesional> profesionales;  
    
-   @inject
+   @Inject
    private Control control;
 
 
@@ -70,34 +73,35 @@ public class LogIn {
     
     public String Autenticar()
     {
+        
         for(Usuario u:usuarios)
         {
             if(u.getNIF().equals(usuario))
             {
                 if(u.getClave().equals(password))  // Hay que añadir
                 {
-                    for(Profesional p:profesionales)
-                    {
-                        if(u.getId().equals(p.getUsuario()))
-                        {
-                           control.setPro(p);
-                            return "profesional.xhtml";
-                            
-                        }
-                    }
-                    //autenticar (con controlador)
+                    
+                    control.setUser(u);
+                    return control.PaginaPrincipal();
                 }
                 else
                 {
                     //contraseña errónea 
+                   FacesContext ctx = FacesContext.getCurrentInstance();
+                    ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Contraseña no válida", "Contraseña no válida"));
+                    return null;
                 }
                 
             }
             else 
             {
+                FacesContext ctx = FacesContext.getCurrentInstance();
+                    ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "El usuario no existe", "El usuario no existe"));
+                    return null;
                 //Usuario no encontrado
             }
         }
+         //AUNQUE HAY UN RETURN EN CADA CCASO DA ERROR PORQUE DICE QUE FALTA EL RETURN Uff
     }
     
 }

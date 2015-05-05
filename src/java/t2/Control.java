@@ -5,19 +5,24 @@
  */
 package t2;
 
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import t1.Profesional;
+import t1.Usuario;
 
 /**
  *
  * @author hii
  */
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class Control {
 
     private Usuario user;
-   
+    private Profesional pro;
+   private List<Profesional> profesionales; 
     
     public Control() {
     }
@@ -30,13 +35,19 @@ public class Control {
         this.user = user;
     }
 
-    public void setPro(Profesional pro) {
-        (Profesional) ;
+    public Profesional getPro() {
+        return pro;
     }
+
+    public void setPro(Profesional pro) {
+        this.pro = pro;
+    }
+
+   
     
     
          
-    public String PáginaPrincipal()
+    public String PaginaPrincipal()
     {
         if (user == null) 
         {
@@ -44,7 +55,21 @@ public class Control {
         } 
         else 
         { 
-          if()  
+          for(Profesional p:profesionales)
+                    {
+                        if(u.getId().equals(p.getUsuario()))
+                        {
+                            
+                          setPro((Profesional)u);
+                            return "profesional.xhtml";
+                            
+                        }
+                        else
+                        {
+                            control.setUser(u);
+                            return control.PaginaPrincipal();
+                        }
+                    })  
             
         }
 /////// PIENSO QUITAR EL CONTROL DE SI ES PROFESIONAL O USUARIO DEL OTRO BACKING BEAN Y PONERLO AQUI
