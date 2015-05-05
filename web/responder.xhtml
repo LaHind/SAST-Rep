@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Junta de Andalucía</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <h:outputStylesheet name="./css/skel.css"/>
+            <h:outputStylesheet name="./css/style.css"/>
+            <h:outputStylesheet name="./css/style-wide.css"/>
+            <h:outputStylesheet name="./css/style-noscript.css"/>
+            <h:outputStylesheet name="./css/style-noscript.css"/> 
+            <h:outputScript name="./js/jquery.min.js"/>                 
+            <h:outputScript name="./js/jquery.dropotron.min.js"/>
+            <h:outputScript name="./js/jquery.scrolly.min.js"/>
+            <h:outputScript name="./js/jquery.scrollgress.min.js"/>
+            <h:outputScript name="./js/skel.min.js"/>
+            <h:outputScript name="./js/skel-layers.min.js"/>
+            <h:outputScript name="./js/init.js"/>
+            <h:outputScript name="./js/fecha.js"/>
+    </h:head>
+    <h:body class="no-sidebar" onload="ponDia();">
+		<header id="header" class="skel-layers-fixed">
+			<h1 id="logo"><span>Registrado como </span><a href="expedienteprof.xhtml" class="nombre">Menganito</a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="altausuario.xhtml">Alta usuario</a></li>
+					<li class="submenu">
+						<a href="">Gestiones</a>
+						<ul>
+							<li><a href="gestionexpediente.xhtml">Gestionar expediente de usuario</a></li>
+							<li><a href="gestionintervenciones.xhtml">Gestionar intervenciones de usuario</a></li>
+							<li><a href="gestioncita.xhtml">Gestionar citas</a></li>
+							<li><a href="gestionformulario.xhtml">Gestionar formularios</a></li>
+							<li><a href="gestiondatos.xhtml">Gestionar datos de usuario</a></li>
+							<li><a href="citapedir.xhtml">Pedir cita a usuario</a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="">Mis datos</a>
+						<ul>
+							<li><a href="expedienteprof.xhtml">Mi expediente</a></li>
+							<li><a href="intervencionesprof.xhtml">Mis intervenciones</a></li>
+							<li><a href="datosprof.xhtml">Mis datos</a></li>
+							<li><a href="faqprof.xhtml">FAQ</a></li>
+						</ul>
+					</li>
+					<li><a href="index.xhtml" class="button special">Deconexión</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="fondo">
+		<article id="main">
+			<header class="special container">
+				<span class="icon fa-laptop"></span>
+				<h2>Responder al formulario de <strong>Fulanito</strong></h2>
+			</header>
+			<section class="wrapper style4 special container 75%">
+				<div class="content">
+					<div class="cita">
+						<form name="formForm" method="post">
+							<div class="row 50%">
+								<div class="12u">
+									<h3>Tema</h3>
+									<p>Muebles antiguos</p>
+									<h3>Comentario</h3>
+									<p>Mis muebles antiguos no pueden ser nocivos como dijo el perito y creo que deberíais reconsiderar el expediente que me abristeis.</p>
+								</div>
+							</div>
+							<div class="row 50%">
+								<div class="12u">
+									<textarea name="respuesta" placeholder="Respuesta" rows="7"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<ul class="buttons">
+										<li><input type="submit" class="responder" value="Enviar respuesta" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</article>
+		</div>
+		
+		<footer id="footer">
+
+			<ul class="icons">
+				<li><a href="https://twitter.com/_susanadiaz" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="https://www.facebook.com/pages/Portal-Junta-de-Andaluc%C3%ADa/224442897628994?fref=ts" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="https://plus.google.com/116281634098380192513/posts" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Junta de Andalucía</li><li>Designed with: <a href="http://es.wikipedia.org/wiki/HTML5">HTML5</a></li>
+			</ul>
+
+		</footer>
+
+
+
+
+    </h:body>
+</html>
+
